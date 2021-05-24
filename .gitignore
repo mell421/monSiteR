@@ -3,3 +3,4 @@
 .RData
 .Ruserdata
 _site/*/figure-html/*.png
+./*.png
