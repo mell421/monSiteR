@@ -72,6 +72,7 @@ tm <- function(text){
   wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
             max.words=150, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
+  
   dev.print(device = png, file = "accueil.png", width = 600)
 }
 
@@ -131,7 +132,7 @@ main <- function(){
   wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
             max.words=150, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
-  dev.print(device = png, file = "copy.png", width = 600)
+  dev.print(device = png, file = "copy.png", width=12,height=8, units='in', res=300)
 
 }
 
@@ -251,7 +252,7 @@ main <- function(){
   #generate word cloud
   # set.seed(1234)
   wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
-            max.words=200, random.order=FALSE, rot.per=0.35,
+            max.words=150, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
   dev.print(device = png, file = "conclubis.png", width = 600)
 
@@ -260,8 +261,130 @@ main <- function(){
 suppressWarnings(main())
 ```
 
+## sem
+```{r sem, echo=FALSE}
+
+main <- function(){
+  text2 <- data.frame(aTestSem())
+  text2 <- text2[2]
+  # Read the text file from local machine , choose file interactively
+  # text2 <- readLines(file.choose())
+  # Load the data as a corpus
+  TextDoc <- Corpus(VectorSource(text2))
+
+  #Replacing "/", "@" and "|" with space
+  toSpace <- content_transformer(function (x , pattern ) gsub(pattern, " ", x))
+  removeSpace <- content_transformer(function (x , pattern ) gsub(pattern, "", x))
+  TextDoc <- tm_map(TextDoc, toSpace, "/")
+  TextDoc <- tm_map(TextDoc, toSpace, "@")
+  TextDoc <- tm_map(TextDoc, toSpace, "\\|")
+  # Convert the text to lower case
+  TextDoc <- tm_map(TextDoc, content_transformer(tolower))
+  # Remove numbers
+  TextDoc <- tm_map(TextDoc, removeNumbers)
+  # Remove english common stopwords
+  # TextDoc <- tm_map(TextDoc, removeWords, stopwords("english"))
+  # Remove your own stop word
+  # specify your custom stopwords as a character vector
+  TextDoc <- tm_map(TextDoc, removeWords, c("conclu", "conclubis","the", "eff", "na", "conclucompi", "conclucompibis","sem"))
+  # Remove punctuations
+  TextDoc <- tm_map(TextDoc, removePunctuation)
+  # Eliminate extra white spaces
+  TextDoc <- tm_map(TextDoc, stripWhitespace)
+  # Eliminate spaces
+  # TextDoc <- gsub("[[:blank:]]", "", TextDoc)
+  # Text stemming - which reduces words to their root form
+  # TextDoc <- tm_map(TextDoc, stemDocument)
+
+  # Build a term-document matrix
+  TextDoc_dtm <- TermDocumentMatrix(TextDoc)
+  dtm_m <- as.matrix(TextDoc_dtm)
+  # Sort by descearing value of frequency
+  dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
+  dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
+  # Display the top 20 most frequent words
+  head(dtm_d, 30)
+
+  # Plot the most frequent words
+  barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
+          col ="lightgreen", main ="Top 15 most frequent words",
+          ylab = "Word frequencies")
+
+  #generate word cloud
+  # set.seed(1234)
+  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
+            max.words=150, random.order=FALSE, rot.per=0.35,
+            colors=brewer.pal(8, "Dark2"))
+  dev.print(device = png, file = "sem.png", width = 600)
+
+}
+
+suppressWarnings(main())
+```
+
+## mois
+```{r mois, echo=FALSE}
+
+main <- function(){
+  text2 <- data.frame(aTestMois())
+  text2 <- text2[2]
+  # Read the text file from local machine , choose file interactively
+  # text2 <- readLines(file.choose())
+  # Load the data as a corpus
+  TextDoc <- Corpus(VectorSource(text2))
+
+  #Replacing "/", "@" and "|" with space
+  toSpace <- content_transformer(function (x , pattern ) gsub(pattern, " ", x))
+  removeSpace <- content_transformer(function (x , pattern ) gsub(pattern, "", x))
+  TextDoc <- tm_map(TextDoc, toSpace, "/")
+  TextDoc <- tm_map(TextDoc, toSpace, "@")
+  TextDoc <- tm_map(TextDoc, toSpace, "\\|")
+  # Convert the text to lower case
+  TextDoc <- tm_map(TextDoc, content_transformer(tolower))
+  # Remove numbers
+  TextDoc <- tm_map(TextDoc, removeNumbers)
+  # Remove english common stopwords
+  # TextDoc <- tm_map(TextDoc, removeWords, stopwords("english"))
+  # Remove your own stop word
+  # specify your custom stopwords as a character vector
+  TextDoc <- tm_map(TextDoc, removeWords, c("conclu", "conclubis","the", "eff", "na", "conclucompi", "conclucompibis","mois"))
+  # Remove punctuations
+  TextDoc <- tm_map(TextDoc, removePunctuation)
+  # Eliminate extra white spaces
+  TextDoc <- tm_map(TextDoc, stripWhitespace)
+  # Eliminate spaces
+  # TextDoc <- gsub("[[:blank:]]", "", TextDoc)
+  # Text stemming - which reduces words to their root form
+  # TextDoc <- tm_map(TextDoc, stemDocument)
+
+  # Build a term-document matrix
+  TextDoc_dtm <- TermDocumentMatrix(TextDoc)
+  dtm_m <- as.matrix(TextDoc_dtm)
+  # Sort by descearing value of frequency
+  dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
+  dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
+  # Display the top 20 most frequent words
+  head(dtm_d, 30)
+
+  # Plot the most frequent words
+  barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
+          col ="lightgreen", main ="Top 15 most frequent words",
+          ylab = "Word frequencies")
+
+  #generate word cloud
+  # set.seed(1234)
+  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
+            max.words=200, random.order=FALSE, rot.per=0.35,
+            colors=brewer.pal(8, "Dark2"))
+  dev.print(device = png, file = "mois.png", width=600)
+
+}
+
+suppressWarnings(main())
+```
+
 ## max
-```{r Max, echo=FALSE}
+```{r max, echo=FALSE}
 
 main <- function(){
   text2 <- copy.max()
