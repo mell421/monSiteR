@@ -15,7 +15,7 @@ library(tidygraph)
 ```{r, echo=FALSE}
 ### EXPLORE STRUCTURE 
 df <- data.frame(listDesc.ec())
-df <- df[1:30,]
+df <- df[1:20,]
 # head(df)
 
 main <- function(){
@@ -59,7 +59,7 @@ social_net <- ggraph(social_net_tbls, layout = "stress") +
 
 # Render the network 
   show(social_net)
-  dev.print(device = png, file = "socialnet1.png", width = 600)
+  # dev.print(device = png, file = "socialnet1.png", width = 600)
 }
 main()
 
@@ -69,7 +69,7 @@ main()
 ```{r, echo=FALSE}
 ### EXPLORE STRUCTURE 
 df <- data.frame(listDesc.ec())
-df <- df[1:30,]
+df <- df[1:20,]
 # head(df)
 
 main <- function(){
@@ -113,7 +113,7 @@ social_net <- ggraph(social_net_tbls, layout = "stress") +
 
 # Render the network 
   show(social_net)
-  dev.print(device = png, file = "socialnet2.png", width = 600)
+  # dev.print(device = png, file = "socialnet2.png", width = 600)
 }
 main()
 
