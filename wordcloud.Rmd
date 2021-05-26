@@ -142,7 +142,7 @@ main <- function(){
             colors=brewer.pal(8, "Dark2"))
   # dev.print(device = png, file = "copy.png", width=12,height=8, units='in', res=300)
 
-    wordcloud2(data = dtm_d, color = "random-light",shape="circle")
+    wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
 }
 
@@ -204,7 +204,7 @@ main <- function(){
             max.words=200, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
   
-    wordcloud2(data = dtm_d, color = "random-light")
+    wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
   # dev.print(device = png, file = "conclu.png", width = 600)
 
@@ -268,7 +268,7 @@ main <- function(){
             max.words=150, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
   
-    wordcloud2(data = dtm_d, color = "random-light")
+    wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
   # dev.print(device = png, file = "conclubis.png", width = 600)
 
@@ -332,7 +332,7 @@ main <- function(){
             max.words=150, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
 
-      wordcloud2(data = dtm_d, color = "random-light")
+      wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
   # dev.print(device = png, file = "sem.png", width = 600)
 
@@ -396,7 +396,7 @@ main <- function(){
             max.words=200, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
   
-    wordcloud2(data = dtm_d, color = "random-light")
+    wordcloud2(data = dtm_d, color = "random-light",shape="circle",backgroundColor ="black")
 
   # dev.print(device = png, file = "mois.png", width=1200)
 
@@ -464,7 +464,7 @@ main <- function(){
             max.words=200, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
   
-    wordcloud2(data = dtm_d, color = "random-light")
+    wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
   # dev.print(device = png, file = "max.png", width = 600)
 
@@ -532,7 +532,7 @@ main <- function(){
             max.words=200, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
   
-    wordcloud2(data = dtm_d, color = "random-light")
+    wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
   # dev.print(device = png, file = "aeff.png", width = 600)
 
@@ -597,7 +597,7 @@ main <- function(){
             max.words=200, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
   
-    wordcloud2(data = dtm_d, color = "random-light")
+    wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
   # dev.print(device = png, file = "resume.png", width = 600)
 
