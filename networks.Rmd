@@ -12,22 +12,22 @@ library(tidygraph)
 ```
 
 ## recent
-```{r, echo=FALSE}
+```{r network1, echo=FALSE}
 ### EXPLORE STRUCTURE 
-df <- data.frame(listDesc.ec())
-df <- df[1:20,]
-# head(df)
+max <- 10
+df <- data.frame(listeCompl.ec())
+df <- df[1:max,]
 
 main <- function(){
   ### CREATE NODES TABLE 
 get_random_names <- function(n) { 
-  unique_names <- distinct(df, Titre_1, .keep_all = TRUE) 
+  unique_names <- distinct(df, en.cours, .keep_all = TRUE) 
   index <- sample(1:nrow(unique_names), n, replace = FALSE) 
   names <- unique_names[index, ] 
   names 
 }
 
-nodes <- get_random_names(10)
+nodes <- get_random_names(max)
 
 
 ### CREATE LINKS TABLE 
@@ -53,7 +53,7 @@ social_net_tbls <- tbl_graph(nodes = nodes,
 # Create the network 
 social_net <- ggraph(social_net_tbls, layout = "stress") +
   geom_node_point(size = 2) +                                         
-  geom_node_text(aes(label = Titre_1), nudge_y = 0.05, nudge_x = 0.2)+ 
+  geom_node_text(aes(label = en.cours), nudge_y = 0.05, nudge_x = 0.2)+ 
   geom_edge_link() +
   theme_void()
 
@@ -66,22 +66,22 @@ main()
 ```
 
 ## recent2
-```{r, echo=FALSE}
+```{r network2, echo=FALSE}
 ### EXPLORE STRUCTURE 
-df <- data.frame(listDesc.ec())
-df <- df[1:20,]
-# head(df)
+max <- 10
+df <- data.frame(listeCompl.ec())
+df <- df[1:max,]
 
 main <- function(){
   ### CREATE NODES TABLE 
 get_random_names <- function(n) { 
-  unique_names <- distinct(df, Titre_1, .keep_all = TRUE) 
+  unique_names <- distinct(df, en.cours, .keep_all = TRUE) 
   index <- sample(1:nrow(unique_names), n, replace = FALSE) 
   names <- unique_names[index, ] 
   names 
 }
 
-nodes <- get_random_names(10)
+nodes <- get_random_names(max)
 
 
 ### CREATE LINKS TABLE 
@@ -107,7 +107,7 @@ social_net_tbls <- tbl_graph(nodes = nodes,
 # Create the network 
 social_net <- ggraph(social_net_tbls, layout = "stress") +
   geom_node_point(size = 2) +                                         
-  geom_node_text(aes(label = Titre_1), nudge_y = 0.05, nudge_x = 0.2)+ 
+  geom_node_text(aes(label = en.cours), nudge_y = 0.05, nudge_x = 0.2)+ 
   geom_edge_link() +
   theme_void()
 

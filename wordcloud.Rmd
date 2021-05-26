@@ -7,6 +7,8 @@ output:
 ```{r setup, include = FALSE}
 suppressWarnings(source("~/GitHub/ajoutRep/ajoutRep/R/sources.R"))
 suppressWarnings(library(tidyverse))
+require(devtools)
+library(wordcloud2)
 ```
 
 
@@ -64,15 +66,16 @@ tm <- function(text){
 
   # Plot the most frequent words
   barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col ="lightgreen", main ="Top 15 most frequent words",
+          col =brewer.pal(8, "Dark2"), main ="Top 15 accueil",
           ylab = "Word frequencies")
 
   #generate word cloud
   # set.seed(1234)
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
-            max.words=150, random.order=FALSE, rot.per=0.35,
-            colors=brewer.pal(8, "Dark2"))
   
+  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=150, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
+  
+    # wordcloud2(data = dtm_d, color = "random-light")
+
   # dev.print(device = png, file = "accueil.png", width = 600)
 }
 
@@ -124,7 +127,7 @@ main <- function(){
 
   # Plot the most frequent words
   barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col ="lightgreen", main ="Top 15 most frequent words",
+          col =brewer.pal(8, "Dark2"), main ="Top 15 copy",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -133,6 +136,8 @@ main <- function(){
             max.words=150, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
   # dev.print(device = png, file = "copy.png", width=12,height=8, units='in', res=300)
+
+    wordcloud2(data = dtm_d, color = "random-light")
 
 }
 
@@ -185,7 +190,7 @@ main <- function(){
 
   # Plot the most frequent words
   barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col ="lightgreen", main ="Top 15 most frequent words",
+          col =brewer.pal(8, "Dark2"), main ="Top 15 conclu",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -193,6 +198,9 @@ main <- function(){
   wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
             max.words=200, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
+  
+    wordcloud2(data = dtm_d, color = "random-light")
+
   # dev.print(device = png, file = "conclu.png", width = 600)
 
 }
@@ -246,7 +254,7 @@ main <- function(){
 
   # Plot the most frequent words
   barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col ="lightgreen", main ="Top 15 most frequent words",
+          col =brewer.pal(8, "Dark2"), main ="Top 15 conclubis",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -254,6 +262,9 @@ main <- function(){
   wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
             max.words=150, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
+  
+    wordcloud2(data = dtm_d, color = "random-light")
+
   # dev.print(device = png, file = "conclubis.png", width = 600)
 
 }
@@ -307,7 +318,7 @@ main <- function(){
 
   # Plot the most frequent words
   barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col ="lightgreen", main ="Top 15 most frequent words",
+          col =brewer.pal(8, "Dark2"), main ="Top 15 sem",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -315,6 +326,9 @@ main <- function(){
   wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
             max.words=150, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
+
+      wordcloud2(data = dtm_d, color = "random-light")
+
   # dev.print(device = png, file = "sem.png", width = 600)
 
 }
@@ -368,7 +382,7 @@ main <- function(){
 
   # Plot the most frequent words
   barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col ="lightgreen", main ="Top 15 most frequent words",
+          col =brewer.pal(8, "Dark2"), main ="Top 15 mois",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -376,6 +390,9 @@ main <- function(){
   wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
             max.words=200, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
+  
+    wordcloud2(data = dtm_d, color = "random-light")
+
   # dev.print(device = png, file = "mois.png", width=1200)
 
 }
@@ -432,8 +449,8 @@ main <- function(){
     dtm_d[1:15,]$freq, 
     las = 2, 
     names.arg = dtm_d[1:15,]$word,
-    col ="lightgreen", 
-    main ="Top 15 most frequent words",
+    col =brewer.pal(8, "Dark2"), 
+    main ="Top 15 max",
     ylab = "Word frequencies")
 
   #generate word cloud
@@ -441,6 +458,9 @@ main <- function(){
   wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
             max.words=200, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
+  
+    wordcloud2(data = dtm_d, color = "random-light")
+
   # dev.print(device = png, file = "max.png", width = 600)
 
 }
@@ -497,8 +517,8 @@ main <- function(){
     dtm_d[1:15,]$freq, 
     las = 2, 
     names.arg = dtm_d[1:15,]$word,
-    col ="lightgreen", 
-    main ="Top 15 most frequent words",
+    col =brewer.pal(8, "Dark2"), 
+    main ="Top 15 eff",
     ylab = "Word frequencies")
 
   #generate word cloud
@@ -506,6 +526,9 @@ main <- function(){
   wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
             max.words=200, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
+  
+    wordcloud2(data = dtm_d, color = "random-light")
+
   # dev.print(device = png, file = "aeff.png", width = 600)
 
 }
@@ -560,7 +583,7 @@ main <- function(){
 
   # Plot the most frequent words
   barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col ="lightgreen", main ="Top 15 most frequent words",
+          col =brewer.pal(8, "Dark2"), main ="Top 15 resume",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -568,6 +591,9 @@ main <- function(){
   wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
             max.words=200, random.order=FALSE, rot.per=0.35,
             colors=brewer.pal(8, "Dark2"))
+  
+    wordcloud2(data = dtm_d, color = "random-light")
+
   # dev.print(device = png, file = "resume.png", width = 600)
 
 }

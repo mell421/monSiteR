@@ -1,18 +1,34 @@
 ---
 title: "My Website"
+
 ---
+```{r render, eval=FALSE, include=FALSE}
+rmarkdown::render_site()
+```
 
 ```{r setup, include = FALSE}
 suppressWarnings(source("~/GitHub/ajoutRep/ajoutRep/R/sources.R"))
 suppressWarnings(library(tidyverse))
 ```
 
-```{r, echo = FALSE}
+```{r concluG, echo = FALSE}
 CopyS <-data.frame(copy.conclu())
 dataC <- data.frame(CopyS$nbCarConclu,CopyS$nbCarConcluBis,CopyS$jour_1,CopyS$date)
   
-  plot(CopyS$nbCarConcluBis,main="nb de caracteres conclu",type = "l",col="red",xlab = "date")
+  plot(CopyS$nbCarConcluBis,main="nb de caracteres conclu",type = "l",col="red",xlab = "date",ylab = "nb car")
   lines(CopyS$nbCarConcluBis,type = "l",col="red")
   lines(CopyS$nbCarConclu,type = "l",col="blue")
   
+```
+
+```{r max, echo = FALSE}
+CopyS <- data.frame(copy.max())
+main <- function(){
+# CopyS <- data.frame()
+  CopyS <- na.omit(CopyS)
+  plot(CopyS$NBog,main="max",type = "l",col="red",xlab = "date",ylab = "nb")
+  lines(CopyS$NBog,type = "l",col="red")
+  lines(CopyS$NBactuel,type = "l",col="blue")
+}
+suppressWarnings(main())
 ```
