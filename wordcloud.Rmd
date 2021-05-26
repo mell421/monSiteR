@@ -33,10 +33,15 @@ tm <- function(text){
 
   #Replacing "/", "@" and "|" with space
   toSpace <- content_transformer(function (x , pattern ) gsub(pattern, " ", x))
+  removeAccentE <- content_transformer(function (x , pattern ) gsub(pattern, "e", x))
+  removeAccentA <- content_transformer(function (x , pattern ) gsub(pattern, "a", x))
   removeSpace <- content_transformer(function (x , pattern ) gsub(pattern, "", x))
-  TextDoc <- tm_map(TextDoc, toSpace, "/")
+  # TextDoc <- tm_map(TextDoc, toSpace, "/")
   TextDoc <- tm_map(TextDoc, toSpace, "@")
   TextDoc <- tm_map(TextDoc, toSpace, "\\|")
+  TextDoc <- tm_map(TextDoc, toSpace, "&")
+  TextDoc <- tm_map(TextDoc, removeAccentE, c("é","è","ê"))
+  TextDoc <- tm_map(TextDoc, removeAccentA, c("à","â"))
   # Convert the text to lower case
   TextDoc <- tm_map(TextDoc, content_transformer(tolower))
   # Remove numbers
@@ -74,7 +79,7 @@ tm <- function(text){
   
   wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=150, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
   
-    # wordcloud2(data = dtm_d, color = "random-light")
+    #wordcloud2(data = dtm_d, color = "random-light")
 
   # dev.print(device = png, file = "accueil.png", width = 600)
 }
@@ -137,7 +142,7 @@ main <- function(){
             colors=brewer.pal(8, "Dark2"))
   # dev.print(device = png, file = "copy.png", width=12,height=8, units='in', res=300)
 
-    wordcloud2(data = dtm_d, color = "random-light")
+    wordcloud2(data = dtm_d, color = "random-light",shape="circle")
 
 }
 
