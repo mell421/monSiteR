@@ -70,8 +70,8 @@ tm <- function(text){
   head(dtm_d, 30)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 15 accueil",
+  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 20 accueil",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -131,8 +131,8 @@ main <- function(){
   head(dtm_d, 30)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 15 copy",
+  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 20 copy",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -194,8 +194,8 @@ main <- function(){
   head(dtm_d, 30)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 15 conclu",
+  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 20 conclu",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -258,8 +258,8 @@ main <- function(){
   head(dtm_d, 30)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 15 conclubis",
+  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 20 conclubis",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -322,8 +322,8 @@ main <- function(){
   head(dtm_d, 30)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 15 sem",
+  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 20 sem",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -386,8 +386,8 @@ main <- function(){
   head(dtm_d, 30)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 15 mois",
+  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 20 mois",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -451,11 +451,11 @@ main <- function(){
 
   # Plot the most frequent words
   barplot(
-    dtm_d[1:15,]$freq, 
+    dtm_d[1:20,]$freq, 
     las = 2, 
-    names.arg = dtm_d[1:15,]$word,
+    names.arg = dtm_d[1:20,]$word,
     col =brewer.pal(8, "Dark2"), 
-    main ="Top 15 max",
+    main ="Top 20 max",
     ylab = "Word frequencies")
 
   #generate word cloud
@@ -519,11 +519,11 @@ main <- function(){
 
   # Plot the most frequent words
   barplot(
-    dtm_d[1:15,]$freq, 
+    dtm_d[1:20,]$freq, 
     las = 2, 
-    names.arg = dtm_d[1:15,]$word,
+    names.arg = dtm_d[1:20,]$word,
     col =brewer.pal(8, "Dark2"), 
-    main ="Top 15 eff",
+    main ="Top 20 eff",
     ylab = "Word frequencies")
 
   #generate word cloud
@@ -587,8 +587,8 @@ main <- function(){
   head(dtm_d, 30)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:15,]$freq, las = 2, names.arg = dtm_d[1:15,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 15 resume",
+  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 20 resume",
           ylab = "Word frequencies")
 
   #generate word cloud

@@ -12,7 +12,7 @@ suppressWarnings(library(tidyverse))
 ## debut
 ```{r lettre, echo=FALSE}
 data <- data.frame(listDesc.desc())
-data %>% filter(episode == 1,status=="en cours") %>% select(descr.img,tisaep,Horodateur) 
+data %>% filter(episode == 1,status=="en cours") %>% select(tisaep,Horodateur,descr.img) 
 
 ```
 

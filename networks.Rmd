@@ -14,7 +14,7 @@ library(tidygraph)
 ## recent
 ```{r network1, echo=FALSE}
 ### EXPLORE STRUCTURE 
-max <- 10
+max <- 15
 df <- data.frame(listeCompl.ec())
 df <- df[1:max,]
 
@@ -68,7 +68,7 @@ main()
 ## recent2
 ```{r network2, echo=FALSE}
 ### EXPLORE STRUCTURE 
-max <- 10
+max <- 15
 df <- data.frame(listeCompl.ec())
 df <- df[1:max,]
 
