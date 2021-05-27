@@ -2,13 +2,15 @@
 title: "My Website"
 
 ---
-```{r render, eval=FALSE, include=FALSE}
-rmarkdown::render_site()
-```
+
 
 ```{r setup, include = FALSE}
 suppressWarnings(source("~/GitHub/ajoutRep/ajoutRep/R/sources.R"))
 suppressWarnings(library(tidyverse))
+```
+
+```{r render, eval=FALSE, include=FALSE}
+rmarkdown::render_site()
 ```
 
 ```{r concluG, echo = FALSE}
