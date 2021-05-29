@@ -5,11 +5,13 @@ title: "My Website"
 
 
 ```{r setup, include = FALSE}
-suppressWarnings(source("~/GitHub/ajoutRep/ajoutRep/R/sources.R"))
+suppressWarnings(source("~/GitHub/monSiteR/fct/sources.R"))
 suppressWarnings(library(tidyverse))
+knitr::opts_chunk$set(cache = TRUE)
 ```
 
 ```{r render, eval=FALSE, include=FALSE}
+rmarkdown::clean_site()
 rmarkdown::render_site()
 ```
 

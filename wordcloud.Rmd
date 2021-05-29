@@ -5,8 +5,9 @@ output:
     df_print: paged
 ---
 ```{r setup, include = FALSE}
-suppressWarnings(source("~/GitHub/ajoutRep/ajoutRep/R/sources.R"))
+suppressWarnings(source("~/GitHub/monSiteR/fct/sources.R"))
 suppressWarnings(library(tidyverse))
+knitr::opts_chunk$set(cache = TRUE)
 require(devtools)
 library(wordcloud2)
 ```
@@ -14,12 +15,13 @@ library(wordcloud2)
 
 ## menu
 - [accueil](#accueil)
+- [en cours](#en-cours)
 - [page copy](#page-copy)
 - [conclu](#conclu)
 - [conclubis](#conclubis)
 - [max](#max)
 - [eff](#eff)
-- [test resume](#test-resume)
+- [resume](#resume)
 
 
 ## accueil
@@ -143,7 +145,7 @@ tm <- function(text){
 
   # Plot the most frequent words
   barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 20 accueil",
+          col =brewer.pal(8, "Dark2"), main ="Top 20 en cours",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -226,7 +228,6 @@ tm <- function(text){
 
 suppressWarnings(tm(text))
 ```
-
 
 ## page copy
 ```{r copy, echo=FALSE}
@@ -682,8 +683,7 @@ main <- function(){
 suppressWarnings(main())
 ```
 
-
-## test resume
+## resume
 ```{r resume, echo=FALSE}
 
 main <- function(){

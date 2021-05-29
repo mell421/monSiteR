@@ -5,8 +5,9 @@ output:
     df_print: paged
 ---
 ```{r setup, include = FALSE}
-suppressWarnings(source("~/GitHub/ajoutRep/ajoutRep/R/sources.R"))
+suppressWarnings(source("~/GitHub/monSiteR/fct/sources.R"))
 suppressWarnings(library(tidyverse))
+knitr::opts_chunk$set(cache = TRUE)
 ```
 
 ## debut
