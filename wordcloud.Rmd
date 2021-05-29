@@ -3,6 +3,7 @@ title: "Wordcloud"
 output:
   html_document:
     df_print: paged
+    toc: true
 ---
 ```{r setup, include = FALSE}
 suppressWarnings(source("~/GitHub/monSiteR/fct/sources.R"))
@@ -11,17 +12,6 @@ knitr::opts_chunk$set(cache = TRUE)
 require(devtools)
 library(wordcloud2)
 ```
-
-
-## menu
-- [accueil](#accueil)
-- [en cours](#en-cours)
-- [page copy](#page-copy)
-- [conclu](#conclu)
-- [conclubis](#conclubis)
-- [max](#max)
-- [eff](#eff)
-- [resume](#resume)
 
 
 ## accueil
