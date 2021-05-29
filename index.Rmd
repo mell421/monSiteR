@@ -1,17 +1,19 @@
 ---
 title: "My Website"
+date: "`r Sys.Date()`"
 output:
   html_document:
     df_print: paged
     toc: true
 ---
-
-
 ```{r setup, include = FALSE}
 suppressWarnings(source("~/GitHub/monSiteR/fct/sources.R"))
-suppressWarnings(library(tidyverse))
 knitr::opts_chunk$set(cache = TRUE)
+
+require(devtools)
+library(wordcloud2)
 ```
+
 
 ```{r render, eval=FALSE, include=FALSE}
 rmarkdown::clean_site()
