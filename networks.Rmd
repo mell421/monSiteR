@@ -41,6 +41,7 @@ target <- sample(1:nrow(nodes), nrow(nodes)*2, replace = TRUE)
 
 # Merge vectors to form a single table 
 links <- data.frame(src, target)
+write.csv(links,"network.csv")
 
 # Clean up 
 links <- data.frame(src, target) %>%  
