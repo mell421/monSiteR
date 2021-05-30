@@ -9,7 +9,13 @@ output:
 ```{r setup, include = FALSE}
 suppressWarnings(source("~/GitHub/monSiteR/fct/sources.R"))
 suppressWarnings(library(tidyverse))
-knitr::opts_chunk$set(cache = TRUE)
+# knitr::opts_chunk$set(cache = TRUE)
+```
+
+## historique
+```{r hist, echo=FALSE}
+data <- data.frame(listDesc.desc())
+data %>% select(tisaep,Horodateur,status) 
 ```
 
 ## debut
@@ -23,7 +29,7 @@ data %>% filter(episode == 1,status=="en cours") %>% select(tisaep,Horodateur,de
 ```{r alea, echo=FALSE}
 data <- data.frame(listDesc.desc())
 max <- 100
-data %>% filter(status == "en cours") %>% sample_n(max) %>% group_by(tisa) %>% summarise(pc = n()) %>% arrange(desc(pc)) %>% filter(pc >= 2)
+data %>% filter(status == "en cours") %>% sample_n(max) %>% group_by(tisa) %>% summarise(pc = n()) %>% arrange(desc(pc)) %>% filter(pc >= 3)
 ```
 
 ## liste EC : Titre

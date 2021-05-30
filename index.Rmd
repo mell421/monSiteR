@@ -8,7 +8,7 @@ output:
 ---
 ```{r setup, include = FALSE}
 suppressWarnings(source("~/GitHub/monSiteR/fct/sources.R"))
-knitr::opts_chunk$set(cache = TRUE)
+# knitr::opts_chunk$set(cache = TRUE)
 
 require(devtools)
 library(wordcloud2)
@@ -16,7 +16,7 @@ library(wordcloud2)
 
 
 ```{r render, eval=FALSE, include=FALSE}
-rmarkdown::clean_site()
+# rmarkdown::clean_site()
 rmarkdown::render_site()
 ```
 
