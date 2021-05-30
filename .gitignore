@@ -3,8 +3,5 @@
 .RData
 .Ruserdata
 _site/*.png
-_site/*/*.png
-_site/*/*/*.png
-_site/*/*/*/*.png
 ./*.png
 *_cache/*
