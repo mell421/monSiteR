@@ -1,0 +1,45 @@
+---
+title: "eurovision"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+suppressWarnings(source("~/GitHub/monSiteR/fct/sources.R"))
+suppressWarnings(library(tidyverse))
+
+  
+
+```
+
+
+
+```{r pays, echo=FALSE}
+# esc <- write.csv(data.frame(esc()),"esc.csv")
+# esc = read.table("esc.csv", header=T)
+# esc <- data.frame(esc)
+esc <- function(){
+  df <- data.frame(gsheet2tbl('https://docs.google.com/spreadsheets/d/1BTbjPp-CPe_GQNEe-uKq8U3tLUocMM1YzvqPGZ0ScNE/edit#gid=0'))
+  df
+}
+esc <- esc()
+big5 <- esc %>% filter(id == "FRA"|id == "ITA"|id == "GBR"|id == "ESP"|id == "DEU") %>% select(-moyenne,-X.)
+head(big5,na.rm=TRUE)
+esc %>% summarise(mean = mean(X2003), n = n())
+
+# create dummy data
+data <- data.frame(
+  name=names(big5[3:20]),
+  value=big5[1,3:20]
+)
+
+# Uniform color
+barplot(height=data$value, names=data$name, 
+        col=brewer.pal(8,"Dark2"),
+        xlab="annee", 
+        ylab="place", 
+        main="italia", 
+        ylim=c(0,26)
+        )
+```
+
