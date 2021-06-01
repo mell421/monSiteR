@@ -7,7 +7,7 @@ output:
     toc: true
 ---
 ```{r setup, include = FALSE}
-suppressWarnings(source("~/GitHub/monSiteR/fct/sources.R"))
+suppressWarnings(source("./fct/sources.R"))
 suppressWarnings(library(tidyverse))
 # knitr::opts_chunk$set(cache = TRUE)
 library(ggraph)
