@@ -26,18 +26,12 @@ tm <- function(text){
 
   #Replacing "/", "@" and "|" with space
   toSpace <- content_transformer(function (x , pattern ) gsub(pattern, " ", x))
-  removeAccentE <- content_transformer(function (x , pattern ) gsub(pattern, "e", x))
-  removeAccentA <- content_transformer(function (x , pattern ) gsub(pattern, "a", x))
-  removeC <- content_transformer(function (x , pattern ) gsub(pattern, "c", x))
   removeSpace <- content_transformer(function (x , pattern ) gsub(pattern, "", x))
   # TextDoc <- tm_map(TextDoc, toSpace, "/")
   TextDoc <- tm_map(TextDoc, toSpace, "@")
   TextDoc <- tm_map(TextDoc, toSpace, "\\|")
   TextDoc <- tm_map(TextDoc, toSpace, "'<'")
   TextDoc <- tm_map(TextDoc, toSpace, "\\'")
-  TextDoc <- tm_map(TextDoc, removeAccentE, c("é","è","ê"))
-  TextDoc <- tm_map(TextDoc, removeAccentA, c("à","â"))
-  TextDoc <- tm_map(TextDoc, removeC, c("ç"))
   # Convert the text to lower case
   TextDoc <- tm_map(TextDoc, content_transformer(tolower))
   # Remove numbers
@@ -66,9 +60,7 @@ tm <- function(text){
   head(dtm_d, 30)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 20 accueil",
-          ylab = "Word frequencies")
+  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word, col =brewer.pal(8, "Dark2"), main ="Top 20 accueil", ylab = "Word frequencies")
 
   #generate word cloud
   # set.seed(1234)
@@ -76,7 +68,8 @@ tm <- function(text){
   wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=150, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
   
     wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
-    
+    # dtm_d <- dtm_d %>% filter(freq >= 2)
+  
   # dev.print(device = png, file = "accueil.png", width = 600)
 }
 
