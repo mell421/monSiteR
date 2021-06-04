@@ -52,3 +52,18 @@ main <- function(){
 }
 suppressWarnings(main())
 ```
+
+```{r ecocc, eval=FALSE, include=FALSE}
+CopyS <- data.frame(aECocc())
+CopyS <- data.frame(CopyS[1:4])
+head(CopyS)
+main <- function(){
+# CopyS <- data.frame()
+  CopyS <- na.omit(CopyS)
+  plot(CopyS$occ_ECR,main="max",type = "l",col="red",xlab = "titre",ylab = "nb")
+  lines(CopyS$occ_ECR,type = "l",col="red")
+  lines(CopyS$occ_ECM,type = "l",col="blue")
+  lines(CopyS$occ_ECS,type = "l",col="green")
+}
+suppressWarnings(main())
+```
