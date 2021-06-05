@@ -1,5 +1,5 @@
 ---
-title: "My Website"
+title: "Series and co"
 date: "`r Sys.Date()`"
 output:
   html_document:
@@ -31,6 +31,7 @@ render(page[i])
 # rmarkdown::render_site("wordcloud.Rmd")
 ```
 
+## conclu
 ```{r concluG, echo = FALSE}
 CopyS <-data.frame(copy.conclu())
 dataC <- data.frame(CopyS$nbCarConclu,CopyS$nbCarConcluBis,CopyS$jour_1,CopyS$date)
@@ -41,6 +42,7 @@ dataC <- data.frame(CopyS$nbCarConclu,CopyS$nbCarConcluBis,CopyS$jour_1,CopyS$da
   
 ```
 
+## max
 ```{r max, echo = FALSE}
 CopyS <- data.frame(copy.max())
 main <- function(){
@@ -53,17 +55,122 @@ main <- function(){
 suppressWarnings(main())
 ```
 
-```{r ecocc, eval=FALSE, include=FALSE}
+## en cours
+```{r ecocc, echo=FALSE}
 CopyS <- data.frame(aECocc())
-CopyS <- data.frame(CopyS[1:4])
-head(CopyS)
+CopyS <- data.frame(CopyS[1:6])
 main <- function(){
+  max <- 30
 # CopyS <- data.frame()
   CopyS <- na.omit(CopyS)
-  plot(CopyS$occ_ECR,main="max",type = "l",col="red",xlab = "titre",ylab = "nb")
-  lines(CopyS$occ_ECR,type = "l",col="red")
-  lines(CopyS$occ_ECM,type = "l",col="blue")
-  lines(CopyS$occ_ECS,type = "l",col="green")
+  print("semaine")
+  barplot(CopyS$occ.ECS, 
+          las = 2, 
+          names.arg = CopyS$en.cours,
+          col =brewer.pal(8, "Dark2"), 
+          main ="Top semaine",
+          ylab = "Word frequencies",
+          ylim=c(0,max(CopyS$occ.ECS)*1.3))
+  box()
+  print("mois")
+  barplot(CopyS$occ.ECM, 
+          las = 2, 
+          names.arg = CopyS$en.cours,
+          col =brewer.pal(8, "Dark2"), 
+          main ="Top mois",
+          ylab = "Word frequencies",
+          ylim=c(0,max(CopyS$occ.ECM)*1.3))
+  box()
+  print("recent")
+  barplot(CopyS$occ.ECR, 
+          las = 2, 
+          names.arg = CopyS$en.cours,
+          col =brewer.pal(8, "Dark2"), 
+          main ="Top recent",
+          ylab = "Word frequencies",
+          ylim=c(0,max(CopyS$occ.ECR)*1.3))
+  box()
+  print("tout")
+  barplot(CopyS$count, 
+          las = 2, 
+          names.arg = CopyS$tisa.en.cours,
+          col =brewer.pal(8, "Dark2"), 
+          main ="Top all",
+          ylab = "Word frequencies",
+          ylim=c(0,max(CopyS$count)*1.3))
+  box()
+  print("---")
+  barplot(t(as.matrix(CopyS[2:4])), 
+          las = 2, 
+          names.arg = CopyS$en.cours,
+          col =c("red","blue","green"), 
+          main ="Top ---",
+          ylab = "Word frequencies",
+          beside = TRUE,
+          ylim=c(0,max(CopyS$occ.ECR)*1.3))
+  box()
+  legend('topright',fill=c("red","blue","green"),legend=c('recent','mois','sem'))
 }
 suppressWarnings(main())
 ```
+
+## termine
+```{r terocc, echo=FALSE}
+CopyS <- data.frame(aECocc())
+CopyS <- data.frame(CopyS[7:12])
+main <- function(){
+  max <- 30
+# CopyS <- data.frame()
+  CopyS <- na.omit(CopyS)
+  print("semaine")
+  barplot(CopyS$occ.FINIS, 
+          las = 2, 
+          names.arg = CopyS$fini,
+          col =brewer.pal(8, "Dark2"), 
+          main ="Top semaine",
+          ylab = "Word frequencies",
+          ylim=c(0,max(CopyS$occ.FINIS)*1.3))
+  box()
+  print("mois")
+  barplot(CopyS$occ.FINIM, 
+          las = 2, 
+          names.arg = CopyS$fini,
+          col =brewer.pal(8, "Dark2"), 
+          main ="Top mois",
+          ylab = "Word frequencies",
+          ylim=c(0,max(CopyS$occ.FINIM)*1.3))
+  box()
+  print("recent")
+  barplot(CopyS$occ.FINIR, 
+          las = 2, 
+          names.arg = CopyS$fini,
+          col =brewer.pal(8, "Dark2"), 
+          main ="Top recent",
+          ylab = "Word frequencies",
+          ylim=c(0,max(CopyS$occ.FINIR)*1.3))
+  box()
+  print("tout")
+  barplot(CopyS$count_1, 
+          las = 2, 
+          names.arg = CopyS$tisa.terminée,
+          col =brewer.pal(8, "Dark2"), 
+          main ="Top all",
+          ylab = "Word frequencies",
+          ylim=c(0,max(CopyS$count_1)*1.3))
+  box()
+  print("---")
+  barplot(t(as.matrix(CopyS[2:4])), 
+          las = 2, 
+          names.arg = CopyS$fini,
+          col =c("red","blue","green"), 
+          main ="Top ---",
+          ylab = "Word frequencies",
+          beside = TRUE,
+          ylim=c(0,max(CopyS$occ.FINIR)*1.3))
+  box()
+  legend('topright',fill=c("red","blue","green"),legend=c('recent','mois','sem'))
+}
+suppressWarnings(main())
+```
+
+
