@@ -17,6 +17,7 @@ library(wordcloud2)
 
 ## accueil
 ```{r accueil, echo=FALSE}
+max <- 30
 text <- data.frame(accueil())
 text <- text[2]
 
@@ -57,10 +58,10 @@ tm <- function(text){
   dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
   dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
   # Display the top 20 most frequent words
-  head(dtm_d, 30)
+  head(dtm_d, max)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word, col =brewer.pal(8, "Dark2"), main ="Top 20 accueil", ylab = "Word frequencies")
+  barplot(dtm_d[1:max,]$freq, las = 2, names.arg = dtm_d[1:max,]$word, col =brewer.pal(8, "Dark2"), main ="Top 30 accueil", ylab = "Word frequencies")
 
   #generate word cloud
   # set.seed(1234)
@@ -78,6 +79,7 @@ suppressWarnings(tm(text))
 
 ## en cours
 ```{r encours, echo=FALSE}
+max <- 30
 text <- data.frame(listDesc.ec())
 text <- text[2]
 
@@ -124,11 +126,11 @@ tm <- function(text){
   dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
   dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
   # Display the top 20 most frequent words
-  head(dtm_d, 30)
+  head(dtm_d, max)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 20 en cours",
+  barplot(dtm_d[1:max,]$freq, las = 2, names.arg = dtm_d[1:max,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 30 en cours",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -146,6 +148,7 @@ suppressWarnings(tm(text))
 
 ## recent
 ```{r recent, echo=FALSE}
+max <- 30
 text <- data.frame(aAccueil())
 text <- text$Titre_1
 
@@ -192,11 +195,11 @@ tm <- function(text){
   dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
   dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
   # Display the top 20 most frequent words
-  head(dtm_d, 30)
+  head(dtm_d, max)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 20 recent",
+  barplot(dtm_d[1:max,]$freq, las = 2, names.arg = dtm_d[1:max,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 30 recent",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -215,6 +218,7 @@ suppressWarnings(tm(text))
 
 ## termine
 ```{r termine, echo=FALSE}
+max <- 30
 text <- data.frame(listDesc.ter())
 text <- text[2]
 
@@ -261,11 +265,11 @@ tm <- function(text){
   dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
   dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
   # Display the top 20 most frequent words
-  head(dtm_d, 30)
+  head(dtm_d, max)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 20 termine",
+  barplot(dtm_d[1:max,]$freq, las = 2, names.arg = dtm_d[1:max,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 30 termine",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -285,8 +289,8 @@ suppressWarnings(tm(text))
 ```{r copy, echo=FALSE}
 
 main <- function(){
+  max <- 30
   text <- data.frame(copy())
-  # Read the text file from local machine , choose file interactively
   # text2 <- readLines(file.choose())
   # Load the data as a corpus
   TextDoc <- Corpus(VectorSource(text))
@@ -322,11 +326,11 @@ main <- function(){
   dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
   dtm_d <- data.frame(word = names(dtm_v) ,freq=dtm_v)
   # Display the top 20 most frequent words
-  head(dtm_d, 30)
+  head(dtm_d, max)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 20 copy",
+  barplot(dtm_d[1:max,]$freq, las = 2, names.arg = dtm_d[1:max,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 30 copy",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -345,6 +349,7 @@ suppressWarnings(main())
 ```{r conclu, echo=FALSE}
 
 main <- function(){
+  max <- 30
   text2 <- data.frame(aTestConclu())
   text2 <- text2[2]
   # Read the text file from local machine , choose file interactively
@@ -383,11 +388,11 @@ main <- function(){
   dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
   dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
   # Display the top 20 most frequent words
-  head(dtm_d, 30)
+  head(dtm_d, max)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 20 conclu",
+  barplot(dtm_d[1:max,]$freq, las = 2, names.arg = dtm_d[1:max,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 30 conclu",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -407,6 +412,7 @@ suppressWarnings(main())
 ```{r conclubis, echo=FALSE}
 
 main <- function(){
+  max <- 30
   text2 <- data.frame(aTestConcluBis())
   text2 <- text2[2]
   # Read the text file from local machine , choose file interactively
@@ -445,11 +451,11 @@ main <- function(){
   dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
   dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
   # Display the top 20 most frequent words
-  head(dtm_d, 30)
+  head(dtm_d, max)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 20 conclubis",
+  barplot(dtm_d[1:max,]$freq, las = 2, names.arg = dtm_d[1:max,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 30 conclubis",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -469,6 +475,7 @@ suppressWarnings(main())
 ```{r sem, echo=FALSE}
 
 main <- function(){
+  max <- 30
   text2 <- data.frame(aTestSem())
   text2 <- text2[2]
   # Read the text file from local machine , choose file interactively
@@ -507,10 +514,10 @@ main <- function(){
   dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
   dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
   # Display the top 20 most frequent words
-  head(dtm_d, 30)
+  head(dtm_d, max)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word, col =brewer.pal(8, "Dark2"), main ="Top 20 sem", ylab = "Word frequencies")
+  barplot(dtm_d[1:max,]$freq, las = 2, names.arg = dtm_d[1:max,]$word, col =brewer.pal(8, "Dark2"), main ="Top 30 sem", ylab = "Word frequencies")
 
   #generate word cloud
   # set.seed(1234)
@@ -529,6 +536,7 @@ suppressWarnings(main())
 ```{r mois, echo=FALSE}
 
 main <- function(){
+  max <- 30
   text2 <- data.frame(aTestMois())
   text2 <- text2[2]
   # Read the text file from local machine , choose file interactively
@@ -567,11 +575,11 @@ main <- function(){
   dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
   dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
   # Display the top 20 most frequent words
-  head(dtm_d, 30)
+  head(dtm_d, max)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 20 mois",
+  barplot(dtm_d[1:max,]$freq, las = 2, names.arg = dtm_d[1:max,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 30 mois",
           ylab = "Word frequencies")
 
   #generate word cloud
@@ -591,6 +599,7 @@ suppressWarnings(main())
 ```{r max, echo=FALSE}
 
 main <- function(){
+  max <- 30
   text2 <- copy.max()
   text2 <- text2[2]
   # Read the text file from local machine , choose file interactively
@@ -629,15 +638,15 @@ main <- function(){
   dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
   dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
   # Display the top 20 most frequent words
-  head(dtm_d, 30)
+  head(dtm_d, max)
 
   # Plot the most frequent words
   barplot(
-    dtm_d[1:20,]$freq, 
+    dtm_d[1:max,]$freq, 
     las = 2, 
-    names.arg = dtm_d[1:20,]$word,
+    names.arg = dtm_d[1:max,]$word,
     col =brewer.pal(8, "Dark2"), 
-    main ="Top 20 max",
+    main ="Top 30 max",
     ylab = "Word frequencies")
 
   #generate word cloud
@@ -657,6 +666,7 @@ suppressWarnings(main())
 ```{r eff, echo=FALSE}
 
 main <- function(){
+  max <- 30
   text2 <- aEff()
   text2 <- text2[2]
   # Read the text file from local machine , choose file interactively
@@ -695,15 +705,15 @@ main <- function(){
   dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
   dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
   # Display the top 20 most frequent words
-  head(dtm_d, 30)
+  head(dtm_d, max)
 
   # Plot the most frequent words
   barplot(
-    dtm_d[1:20,]$freq, 
+    dtm_d[1:max,]$freq, 
     las = 2, 
-    names.arg = dtm_d[1:20,]$word,
+    names.arg = dtm_d[1:max,]$word,
     col =brewer.pal(8, "Dark2"), 
-    main ="Top 20 eff",
+    main ="Top 30 eff",
     ylab = "Word frequencies")
 
   #generate word cloud
@@ -723,6 +733,7 @@ suppressWarnings(main())
 ```{r resume, echo=FALSE}
 
 main <- function(){
+  max <- 30
   text2 <- data.frame(aTestResume())
   text2 <- text2[2]
   # Read the text file from local machine , choose file interactively
@@ -761,11 +772,11 @@ main <- function(){
   dtm_v <- sort(rowSums(dtm_m),decreasing=TRUE)
   dtm_d <- data.frame(word = names(dtm_v),freq=dtm_v)
   # Display the top 20 most frequent words
-  head(dtm_d, 30)
+  head(dtm_d, max)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 20 resume",
+  barplot(dtm_d[1:max,]$freq, las = 2, names.arg = dtm_d[1:max,]$word,
+          col =brewer.pal(8, "Dark2"), main ="Top 30 resume",
           ylab = "Word frequencies")
 
   #generate word cloud
