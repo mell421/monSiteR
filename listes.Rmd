@@ -27,6 +27,7 @@ data %>% filter(episode == 1,status=="en cours") %>% select(tisaep,Horodateur,de
 
 ## liste EC : alea
 ```{r alea, echo=FALSE}
+
 data <- data.frame(listDesc.desc())
 max <- 100
 data %>% filter(status == "en cours") %>% sample_n(max) %>% group_by(tisa) %>% summarise(pc = n()) %>% arrange(desc(pc)) %>% filter(pc >= 3)

@@ -65,7 +65,7 @@ tm <- function(text){
   #generate word cloud
   # set.seed(1234)
   
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=150, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
+  # wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=150, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
   
     wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
     # dtm_d <- dtm_d %>% filter(freq >= 2)
@@ -134,7 +134,7 @@ tm <- function(text){
   #generate word cloud
   # set.seed(1234)
   
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=150, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
+  # wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=150, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
   
     wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
@@ -202,7 +202,7 @@ tm <- function(text){
   #generate word cloud
   # set.seed(1234)
   
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=150, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
+  # wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=150, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
   
     wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
@@ -271,7 +271,7 @@ tm <- function(text){
   #generate word cloud
   # set.seed(1234)
   
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=150, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
+  # wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=150, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
   
     wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
@@ -331,9 +331,7 @@ main <- function(){
 
   #generate word cloud
   # set.seed(1234)
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
-            max.words=150, random.order=FALSE, rot.per=0.35,
-            colors=brewer.pal(8, "Dark2"))
+  # wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1, max.words=150, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
   # dev.print(device = png, file = "copy.png", width=12,height=8, units='in', res=300)
 
     wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
@@ -394,9 +392,7 @@ main <- function(){
 
   #generate word cloud
   # set.seed(1234)
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
-            max.words=200, random.order=FALSE, rot.per=0.35,
-            colors=brewer.pal(8, "Dark2"))
+  # wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1, max.words=200, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
   
     wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
@@ -458,9 +454,7 @@ main <- function(){
 
   #generate word cloud
   # set.seed(1234)
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
-            max.words=150, random.order=FALSE, rot.per=0.35,
-            colors=brewer.pal(8, "Dark2"))
+  # wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1, max.words=150, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
   
     wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
@@ -516,15 +510,11 @@ main <- function(){
   head(dtm_d, 30)
 
   # Plot the most frequent words
-  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word,
-          col =brewer.pal(8, "Dark2"), main ="Top 20 sem",
-          ylab = "Word frequencies")
+  barplot(dtm_d[1:20,]$freq, las = 2, names.arg = dtm_d[1:20,]$word, col =brewer.pal(8, "Dark2"), main ="Top 20 sem", ylab = "Word frequencies")
 
   #generate word cloud
   # set.seed(1234)
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
-            max.words=150, random.order=FALSE, rot.per=0.35,
-            colors=brewer.pal(8, "Dark2"))
+  # wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1, max.words=150, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
 
       wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
@@ -586,9 +576,7 @@ main <- function(){
 
   #generate word cloud
   # set.seed(1234)
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
-            max.words=200, random.order=FALSE, rot.per=0.35,
-            colors=brewer.pal(8, "Dark2"))
+  # wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=200, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
   
     wordcloud2(data = dtm_d, color = "random-light",shape="circle",backgroundColor ="black")
 
@@ -654,9 +642,7 @@ main <- function(){
 
   #generate word cloud
   # set.seed(1234)
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
-            max.words=200, random.order=FALSE, rot.per=0.35,
-            colors=brewer.pal(8, "Dark2"))
+  # wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,max.words=200, random.order=FALSE, rot.per=0.35,colors=brewer.pal(8, "Dark2"))
   
     wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
@@ -722,9 +708,7 @@ main <- function(){
 
   #generate word cloud
   # set.seed(1234)
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
-            max.words=200, random.order=FALSE, rot.per=0.35,
-            colors=brewer.pal(8, "Dark2"))
+  # wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,            max.words=200,random.order=FALSE, rot.per=0.35,            colors=brewer.pal(8, "Dark2"))
   
     wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
@@ -786,9 +770,7 @@ main <- function(){
 
   #generate word cloud
   # set.seed(1234)
-  wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,
-            max.words=200, random.order=FALSE, rot.per=0.35,
-            colors=brewer.pal(8, "Dark2"))
+  # wordcloud(words = dtm_d$word, freq = dtm_d$freq, min.freq = 1,            max.words=200, random.order=FALSE, rot.per=0.35,            colors=brewer.pal(8, "Dark2"))
   
     wordcloud2(data = dtm_d, color = "random-light",backgroundColor ="black")
 
