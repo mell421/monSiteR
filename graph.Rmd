@@ -14,6 +14,7 @@ require(devtools)
 library(knitr)
 library(rmarkdown)
 library(wordcloud2)
+library(dplyr)
 ```
 
 
@@ -26,33 +27,43 @@ main <- function(){
 # CopyS <- data.frame()
   CopyS <- na.omit(CopyS)
   print("semaine")
-  barplot(CopyS$occ.ECS, 
+  sem <- CopyS %>% filter(occ.ECS >= 1)
+  sem2 <- sem %>% arrange(desc(sem$occ.ECS))
+  barplot(sem$occ.ECS, 
           las = 2, 
-          names.arg = CopyS$en.cours,
+          names.arg = sem$en.cours,
           col =brewer.pal(8, "Dark2"), 
           main ="Top semaine",
           ylab = "Word frequencies",
-          ylim=c(0,max(CopyS$occ.ECS)*1.1))
+          ylim=c(0,max(sem$occ.ECS)*1.1))
   box()
+  pie(sem2$occ.ECS,label=paste(sem2$en.cours,"",sem2$occ.ECS))
   print("mois")
-  barplot(CopyS$occ.ECM, 
+  mois <- CopyS %>% filter(occ.ECM >= 1)
+  mois2 <- mois %>% arrange(desc(mois$occ.ECM))
+  barplot(mois$occ.ECM, 
           las = 2, 
-          names.arg = CopyS$en.cours,
+          names.arg = mois$en.cours,
           col =brewer.pal(8, "Dark2"), 
           main ="Top mois",
           ylab = "Word frequencies",
-          ylim=c(0,max(CopyS$occ.ECM)*1.1))
+          ylim=c(0,max(mois$occ.ECM)*1.1))
   box()
+  pie(mois2$occ.ECM,label=paste(mois2$en.cours,"",mois2$occ.ECM))
   print("recent")
-  barplot(CopyS$occ.ECR, 
+  rec <- CopyS %>% filter(occ.ECR >= 1)
+  rec2 <- rec %>% arrange(desc(rec$occ.ECR))
+  barplot(rec$occ.ECR, 
           las = 2, 
-          names.arg = CopyS$en.cours,
+          names.arg = rec$en.cours,
           col =brewer.pal(8, "Dark2"), 
           main ="Top recent",
           ylab = "Word frequencies",
-          ylim=c(0,max(CopyS$occ.ECR)*1.1))
+          ylim=c(0,max(rec$occ.ECR)*1.1))
   box()
+  pie(rec2$occ.ECR,label=paste(rec2$en.cours,"",rec2$occ.ECR))
   print("tout")
+  
   barplot(CopyS$count, 
           las = 2, 
           names.arg = CopyS$tisa.en.cours,
@@ -85,22 +96,24 @@ main <- function(){
 # CopyS <- data.frame()
   CopyS <- na.omit(CopyS)
   print("semaine")
-  barplot(CopyS$occ.FINIS, 
+  sem <- CopyS %>% filter(occ.FINIS >= 1)
+  barplot(sem$occ.FINIS, 
           las = 2, 
-          names.arg = CopyS$fini,
+          names.arg = sem$fini,
           col =brewer.pal(8, "Dark2"), 
           main ="Top semaine",
           ylab = "Word frequencies",
-          ylim=c(0,max(CopyS$occ.FINIS)*1.1))
+          ylim=c(0,max(sem$occ.FINIS)*1.1))
   box()
   print("mois")
-  barplot(CopyS$occ.FINIM, 
+  mois <- CopyS %>% filter(occ.FINIM >= 1)
+  barplot(mois$occ.FINIM, 
           las = 2, 
-          names.arg = CopyS$fini,
+          names.arg = mois$fini,
           col =brewer.pal(8, "Dark2"), 
           main ="Top mois",
           ylab = "Word frequencies",
-          ylim=c(0,max(CopyS$occ.FINIM)*1.1))
+          ylim=c(0,max(mois$occ.FINIM)*1.1))
   box()
   print("recent")
   barplot(CopyS$occ.FINIR, 
@@ -157,6 +170,7 @@ barplot(table(df$minute),
         ylim=c(0,max(table(df$minute))*1.1)
         )
 box()
+
 print("secondes")
 barplot(table(df$sec),
         las = 2,
