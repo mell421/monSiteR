@@ -4,6 +4,8 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+    - text: "Graph"
+      href: graph.html
     - text: "Wordcloud"
       href: wordcloud.html
     - text: "Listes"

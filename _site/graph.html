@@ -10,8 +10,9 @@
 
 
 
+<meta name="date" content="2021-06-06" />
 
-<title>eurovision</title>
+<title>Series and co</title>
 
 <script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
@@ -32,6 +33,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet" />
+<script src="site_libs/pagedtable-1.1/js/pagedtable.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -245,6 +248,9 @@ $(document).ready(function () {
   <a href="index.html">Home</a>
 </li>
 <li>
+  <a href="graph.html">Graph</a>
+</li>
+<li>
   <a href="wordcloud.html">Wordcloud</a>
 </li>
 <li>
@@ -268,64 +274,54 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">eurovision</h1>
+<h1 class="title toc-ignore">Series and co</h1>
+<h4 class="date">2021-06-06</h4>
 
 </div>
 
+<div id="TOC">
+<ul>
+<li><a href="#en-cours">en cours</a></li>
+<li><a href="#termine">termine</a></li>
+<li><a href="#temps">temps</a></li>
+</ul>
+</div>
 
-<pre class="r"><code>esc &lt;- function(){
-  df &lt;- suppressWarnings(data.frame(gsheet2tbl(&#39;https://docs.google.com/spreadsheets/d/1BTbjPp-CPe_GQNEe-uKq8U3tLUocMM1YzvqPGZ0ScNE/edit#gid=380071250&#39;)))
-  df
-}
-esc &lt;- esc()
-esc &lt;- esc %&gt;% filter(DF==&quot;F&quot;,Place == 1) %&gt;% select(annee:Points,-Country) %&gt;% slice(1:10)
-esc</code></pre>
-<pre><code>##    annee DF Ordre        Pays           Artiste             Chanson
-## 1   2021  F    24      Italie          Måneskin       Zitti e buoni
-## 2   2019  F    12    Pays-Bas   Duncan Laurence              Arcade
-## 3   2018  F    22      Israël             Netta                 Toy
-## 4   2017  F    11    Portugal   Salvador Sobral     Amar pelos dois
-## 5   2016  F    21     Ukraine            Jamala                1944
-## 6   2015  F    10       Suède    Måns Zelmerlöw              Heroes
-## 7   2014  F    11    Autriche    Conchita Wurst Rise Like a Phoenix
-## 8   2013  F    18    Danemark Emmelie de Forest      Only Teardrops
-## 9   2012  F    17       Suède            Loreen            Euphoria
-## 10  2011  F    19 Azerbaïdjan       Ell &amp; Nikki      Running Scared
-##                      Langue Place Points
-## 1                   Italien     1    524
-## 2                   Anglais     1    498
-## 3                   Anglais     1    529
-## 4                 Portugais     1    758
-## 5  Anglais, tatar de Crimée     1    534
-## 6                   Anglais     1    365
-## 7                   Anglais     1    290
-## 8                   Anglais     1    281
-## 9                   Anglais     1    372
-## 10                  Anglais     1    221</code></pre>
-<pre class="r"><code>esc &lt;- function(){
-  df &lt;- suppressWarnings(data.frame(gsheet2tbl(&#39;https://docs.google.com/spreadsheets/d/1BTbjPp-CPe_GQNEe-uKq8U3tLUocMM1YzvqPGZ0ScNE/edit#gid=380071250&#39;)))
-  df
-}
-esc &lt;- esc()
-esc &lt;- esc %&gt;% filter(DF==&quot;F&quot;) %&gt;% select(annee:Points,-Country) 
-head(esc)</code></pre>
-<pre><code>##   annee DF Ordre        Pays           Artiste                   Chanson
-## 1  2021  F     2     Albanie Anxhela Peristeri                     Karma
-## 2  2021  F    15   Allemagne           Jendrik         I Don&#39;t Feel Hate
-## 3  2021  F    21 Azerbaïdjan            Efendi                 Mata Hari
-## 4  2021  F     4    Belgique      Hooverphonic           The Wrong Place
-## 5  2021  F    17    Bulgarie          VICTORIA Growing Up Is Getting Old
-## 6  2021  F     1      Chypre   Elena Tsagrinou                 El Diablo
-##     Langue Place Points
-## 1 Albanais    21     57
-## 2  Anglais    25      3
-## 3  Anglais    20     65
-## 4  Anglais    19     74
-## 5  Anglais    11    170
-## 6  Anglais    16     94</code></pre>
-<pre class="r"><code>escdf &lt;- esc %&gt;% filter(Pays==&quot;Italie&quot;) %&gt;% select(annee,Pays,Place)
-plot(escdf)</code></pre>
-<p><img src="eurovision_files/figure-html/all-1.png" width="672" /></p>
+<div id="en-cours" class="section level2">
+<h2>en cours</h2>
+<pre><code>## [1] &quot;semaine&quot;</code></pre>
+<p><img src="graph_files/figure-html/ecocc-1.png" width="672" /></p>
+<pre><code>## [1] &quot;mois&quot;</code></pre>
+<p><img src="graph_files/figure-html/ecocc-2.png" width="672" /></p>
+<pre><code>## [1] &quot;recent&quot;</code></pre>
+<p><img src="graph_files/figure-html/ecocc-3.png" width="672" /></p>
+<pre><code>## [1] &quot;tout&quot;</code></pre>
+<p><img src="graph_files/figure-html/ecocc-4.png" width="672" /></p>
+<pre><code>## [1] &quot;---&quot;</code></pre>
+<p><img src="graph_files/figure-html/ecocc-5.png" width="672" /></p>
+</div>
+<div id="termine" class="section level2">
+<h2>termine</h2>
+<pre><code>## [1] &quot;semaine&quot;</code></pre>
+<p><img src="graph_files/figure-html/terocc-1.png" width="672" /></p>
+<pre><code>## [1] &quot;mois&quot;</code></pre>
+<p><img src="graph_files/figure-html/terocc-2.png" width="672" /></p>
+<pre><code>## [1] &quot;recent&quot;</code></pre>
+<p><img src="graph_files/figure-html/terocc-3.png" width="672" /></p>
+<pre><code>## [1] &quot;tout&quot;</code></pre>
+<p><img src="graph_files/figure-html/terocc-4.png" width="672" /></p>
+<pre><code>## [1] &quot;---&quot;</code></pre>
+<p><img src="graph_files/figure-html/terocc-5.png" width="672" /></p>
+</div>
+<div id="temps" class="section level2">
+<h2>temps</h2>
+<pre><code>## [1] &quot;heures&quot;</code></pre>
+<p><img src="graph_files/figure-html/temps-1.png" width="672" /></p>
+<pre><code>## [1] &quot;minutes&quot;</code></pre>
+<p><img src="graph_files/figure-html/temps-2.png" width="672" /></p>
+<pre><code>## [1] &quot;secondes&quot;</code></pre>
+<p><img src="graph_files/figure-html/temps-3.png" width="672" /></p>
+</div>
 
 
 
