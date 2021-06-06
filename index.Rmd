@@ -174,7 +174,7 @@ suppressWarnings(main())
 ```
 
 ## temps
-```{r heure, echo=FALSE}
+```{r temps, echo=FALSE}
 
 df <- data.frame(accueil())
 print("heures")
