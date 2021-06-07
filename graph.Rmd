@@ -1,5 +1,5 @@
 ---
-title: "Series and co"
+title: "Graph"
 date: "`r Sys.Date()`"
 output:
   html_document:
@@ -63,7 +63,6 @@ main <- function(){
   box()
   pie(rec2$occ.ECR,label=paste(rec2$en.cours,"",rec2$occ.ECR))
   print("tout")
-  
   barplot(CopyS$count, 
           las = 2, 
           names.arg = CopyS$tisa.en.cours,

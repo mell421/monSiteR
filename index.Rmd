@@ -1,5 +1,5 @@
 ---
-title: "Series and co"
+title: "Index"
 date: "`r Sys.Date()`"
 output:
   html_document:
@@ -14,13 +14,6 @@ require(devtools)
 library(knitr)
 library(rmarkdown)
 library(wordcloud2)
-```
-
-
-```{r render, eval=FALSE, include=FALSE}
-# rmarkdown::clean_site()
-page <- c("index.Rmd","networks.Rmd","listes.Rmd","wordcloud.Rmd")
-
 ```
 
 ## conclu
