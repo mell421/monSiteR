@@ -180,3 +180,107 @@ barplot(table(df$sec),
         )
 box()
 ```
+
+## accueil
+```{r acc, echo=FALSE}
+
+df <- data.frame(accueil())
+print("saison")
+barplot(table(df$saison),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="saison",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$saison))*1.1)
+        )
+box()
+print("episode")
+barplot(table(df$episode),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="episode",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$episode))*1.1)
+        )
+box()
+print("status")
+barplot(table(df$status),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="status",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$status))*1.1)
+        )
+box()
+print("indice")
+barplot(table(df$indice),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="indice",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$indice))*1.1)
+        )
+box()
+
+```
+
+## copy
+```{r copy, echo=FALSE}
+
+df <- data.frame(aCopyScript())
+print("nb titre sem")
+barplot(table(df$nrs),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="nb titre sem",
+        ylab = "nb sem with x titles",
+        ylim=c(0,max(table(df$nrs))*1.1)
+        )
+box()
+print("nb caractere sem")
+barplot(table(df$nbCar),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="nb caractere sem",
+        ylab = "nb sem with x car",
+        ylim=c(0,max(table(df$nbCar))*1.1)
+        )
+box()
+print("nb titre mois")
+barplot(table(df$nrm),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="nb titre mois",
+        ylab = "nb mois with x titles",
+        ylim=c(0,max(table(df$nrm))*1.1)
+        )
+box()
+
+print("nb caractere mois")
+barplot(table(df$nbCar_1),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="nb caractere mois",
+        ylab = "nb mois with x car",
+        ylim=c(0,max(table(df$nbCar_1))*1.1)
+        )
+box()
+print("nb titre conclu")
+barplot(table(df$nc),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="nb titre conclu",
+        ylab = "nc",
+        ylim=c(0,max(table(df$nc))*1.1)
+        )
+box()
+print("nb titre conclubis")
+barplot(table(df$ncb),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="nb titre conclubis",
+        ylab = "ncb",
+        ylim=c(0,max(table(df$ncb))*1.1)
+        )
+box()
+```
