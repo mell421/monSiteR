@@ -14,6 +14,9 @@ require(devtools)
 library(knitr)
 library(rmarkdown)
 library(wordcloud2)
+library(tidyverse)
+library(car)
+
 ```
 
 ## conclu
@@ -40,3 +43,94 @@ main <- function(){
 suppressWarnings(main())
 ```
 
+## regression1
+```{r regress1, echo = FALSE}
+# install.packages("car")
+Prestige <- copy.conclu()
+    Prestige <- as_tibble(Prestige)
+
+    # as.tibble(Prestige)
+    # 1
+scatterplot(nbCarConclu~nbCarConcluBis
+, data=Prestige)
+# 2
+# scatterplot(nc~ncb, data=Prestige)
+# 3
+# scatterplot(nbCarConclu~nc, data=Prestige)
+# 4
+# scatterplot(nbCarConcluBis~ncb, data=Prestige)
+
+prest.lm1 <- lm(nbCarConclu~nbCarConcluBis, data=Prestige)
+acf(residuals(prest.lm1), main="prest.lm1")
+# durbinWatsonTest (prest.lm1)
+plot(prest.lm1,2)
+# shapiro.test(residuals(prest.lm1))
+plot(prest.lm1, 3)
+# ncvTest(prest.lm1)
+plot(prest.lm1,1)
+# influenceIndexPlot(prest.lm1)
+```
+
+## regression2
+```{r regress2, echo = FALSE}
+# install.packages("car")
+Prestige <- copy.conclu()
+    Prestige <- as_tibble(Prestige)
+
+    # as.tibble(Prestige)
+# 2
+scatterplot(nc~ncb
+, data=Prestige)
+
+prest.lm1 <- lm(nc~ncb, data=Prestige)
+acf(residuals(prest.lm1), main="prest.lm1")
+# durbinWatsonTest (prest.lm1)
+plot(prest.lm1,2)
+# shapiro.test(residuals(prest.lm1))
+plot(prest.lm1, 3)
+# ncvTest(prest.lm1)
+plot(prest.lm1,1)
+```
+
+## regression3
+```{r regress3, echo = FALSE}
+# install.packages("car")
+Prestige <- copy.conclu()
+    Prestige <- as_tibble(Prestige)
+
+    # as.tibble(Prestige)
+# 3
+scatterplot(nbCarConclu~nc
+, data=Prestige)
+
+prest.lm1 <- lm(nbCarConclu~nc, data=Prestige)
+acf(residuals(prest.lm1), main="prest.lm1")
+# durbinWatsonTest (prest.lm1)
+plot(prest.lm1,2)
+# shapiro.test(residuals(prest.lm1))
+plot(prest.lm1, 3)
+# ncvTest(prest.lm1)
+plot(prest.lm1,1)
+```
+
+## regression4
+```{r regress4, echo = FALSE}
+# install.packages("car")
+Prestige <- copy.conclu()
+    Prestige <- as_tibble(Prestige)
+
+    # as.tibble(Prestige)
+
+# 4
+scatterplot(nbCarConcluBis~ncb
+, data=Prestige)
+
+prest.lm1 <- lm(nbCarConcluBis~ncb, data=Prestige)
+acf(residuals(prest.lm1), main="prest.lm1")
+# durbinWatsonTest (prest.lm1)
+plot(prest.lm1,2)
+# shapiro.test(residuals(prest.lm1))
+plot(prest.lm1, 3)
+# ncvTest(prest.lm1)
+plot(prest.lm1,1)
+```

@@ -41,7 +41,7 @@ target <- sample(1:nrow(nodes), nrow(nodes)*2, replace = TRUE)
 
 # Merge vectors to form a single table 
 links <- data.frame(src, target)
-write.csv(links,"network.csv")
+# write.csv(links,"network.csv")
 
 # Clean up 
 links <- data.frame(src, target) %>%  
@@ -69,7 +69,12 @@ social_net <- ggraph(social_net_tbls, layout = "stress") +
 main()
 }
 
-netw(15) 
+netw(5)
+netw(6)
+netw(7)
+netw(8)
+netw(9)
+netw(10) 
 netw(15)
 
 ```
