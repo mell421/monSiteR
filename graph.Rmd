@@ -151,7 +151,9 @@ suppressWarnings(main())
 ```{r temps, echo=FALSE}
 
 df <- data.frame(accueil())
-print("heures")
+layout(matrix(1:4,2,2))
+
+# print("heures")
 barplot(table(df$hh),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
@@ -160,7 +162,7 @@ barplot(table(df$hh),
         ylim=c(0,max(table(df$hh))*1.1)
         )
 box()
-print("minutes")
+# print("minutes")
 barplot(table(df$minute),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
@@ -170,7 +172,7 @@ barplot(table(df$minute),
         )
 box()
 
-print("secondes")
+# print("secondes")
 barplot(table(df$sec),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
@@ -185,7 +187,8 @@ box()
 ```{r acc, echo=FALSE}
 
 df <- data.frame(accueil())
-print("saison")
+layout(matrix(1:4,2,2))
+# print("saison")
 barplot(table(df$saison),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
@@ -194,7 +197,7 @@ barplot(table(df$saison),
         ylim=c(0,max(table(df$saison))*1.1)
         )
 box()
-print("episode")
+# print("episode")
 barplot(table(df$episode),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
@@ -203,7 +206,7 @@ barplot(table(df$episode),
         ylim=c(0,max(table(df$episode))*1.1)
         )
 box()
-print("status")
+# print("status")
 barplot(table(df$status),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
@@ -212,7 +215,7 @@ barplot(table(df$status),
         ylim=c(0,max(table(df$status))*1.1)
         )
 box()
-print("indice")
+# print("indice")
 barplot(table(df$indice),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
@@ -228,7 +231,9 @@ box()
 ```{r copy, echo=FALSE}
 
 df <- data.frame(aCopyScript())
-print("nb titre sem")
+layout(matrix(1:4,2,2))
+
+# print("nb titre sem")
 barplot(table(df$nrs),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
@@ -237,7 +242,7 @@ barplot(table(df$nrs),
         ylim=c(0,max(table(df$nrs))*1.1)
         )
 box()
-print("nb caractere sem")
+# print("nb caractere sem")
 barplot(table(df$nbCar),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
@@ -246,7 +251,7 @@ barplot(table(df$nbCar),
         ylim=c(0,max(table(df$nbCar))*1.1)
         )
 box()
-print("nb titre mois")
+# print("nb titre mois")
 barplot(table(df$nrm),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
@@ -256,7 +261,7 @@ barplot(table(df$nrm),
         )
 box()
 
-print("nb caractere mois")
+# print("nb caractere mois")
 barplot(table(df$nbCar_1),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
@@ -265,7 +270,8 @@ barplot(table(df$nbCar_1),
         ylim=c(0,max(table(df$nbCar_1))*1.1)
         )
 box()
-print("nb titre conclu")
+layout(matrix(1:2,1,2))
+# print("nb titre conclu")
 barplot(table(df$nc),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
@@ -274,7 +280,7 @@ barplot(table(df$nc),
         ylim=c(0,max(table(df$nc))*1.1)
         )
 box()
-print("nb titre conclubis")
+# print("nb titre conclubis")
 barplot(table(df$ncb),
         las = 2,
         col =brewer.pal(8, "Dark2"), 
