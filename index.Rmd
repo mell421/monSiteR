@@ -50,6 +50,7 @@ Prestige <- copy.conclu()
     Prestige <- as_tibble(Prestige)
 
     # as.tibble(Prestige)
+     layout(matrix(1:4,2,2))
     # 1
 scatterplot(nbCarConclu~nbCarConcluBis
 , data=Prestige)
@@ -78,6 +79,7 @@ Prestige <- copy.conclu()
     Prestige <- as_tibble(Prestige)
 
     # as.tibble(Prestige)
+    layout(matrix(1:4,2,2))
 # 2
 scatterplot(nc~ncb
 , data=Prestige)
@@ -99,6 +101,7 @@ Prestige <- copy.conclu()
     Prestige <- as_tibble(Prestige)
 
     # as.tibble(Prestige)
+    layout(matrix(1:4,2,2))
 # 3
 scatterplot(nbCarConclu~nc
 , data=Prestige)
@@ -120,7 +123,7 @@ Prestige <- copy.conclu()
     Prestige <- as_tibble(Prestige)
 
     # as.tibble(Prestige)
-
+  layout(matrix(1:4,2,2))
 # 4
 scatterplot(nbCarConcluBis~ncb
 , data=Prestige)
