@@ -43,7 +43,36 @@ main <- function(){
 suppressWarnings(main())
 ```
 
-## regression1
+## regression max
+```{r regress0, echo = FALSE}
+# install.packages("car")
+Prestige <- copy.max()
+    Prestige <- as_tibble(Prestige)
+
+    # as.tibble(Prestige)
+     layout(matrix(1:4,2,2))
+    # 1
+scatterplot(NBog~NBactuel
+, data=Prestige)
+# 2
+# scatterplot(nc~ncb, data=Prestige)
+# 3
+# scatterplot(nbCarConclu~nc, data=Prestige)
+# 4
+# scatterplot(nbCarConcluBis~ncb, data=Prestige)
+
+prest.lm1 <- lm(NBog~NBactuel, data=Prestige)
+acf(residuals(prest.lm1), main="prest.lm1")
+# durbinWatsonTest (prest.lm1)
+plot(prest.lm1,2)
+# shapiro.test(residuals(prest.lm1))
+plot(prest.lm1, 3)
+# ncvTest(prest.lm1)
+plot(prest.lm1,1)
+# influenceIndexPlot(prest.lm1)
+```
+
+## regression1 nbCarConclu~nbCarConcluBis
 ```{r regress1, echo = FALSE}
 # install.packages("car")
 Prestige <- copy.conclu()
@@ -72,7 +101,7 @@ plot(prest.lm1,1)
 # influenceIndexPlot(prest.lm1)
 ```
 
-## regression2
+## regression2 nc~ncb
 ```{r regress2, echo = FALSE}
 # install.packages("car")
 Prestige <- copy.conclu()
@@ -94,7 +123,7 @@ plot(prest.lm1, 3)
 plot(prest.lm1,1)
 ```
 
-## regression3
+## regression3 nbCarConclu~nc
 ```{r regress3, echo = FALSE}
 # install.packages("car")
 Prestige <- copy.conclu()
@@ -116,7 +145,7 @@ plot(prest.lm1, 3)
 plot(prest.lm1,1)
 ```
 
-## regression4
+## regression4 nbCarConcluBis~ncb
 ```{r regress4, echo = FALSE}
 # install.packages("car")
 Prestige <- copy.conclu()
