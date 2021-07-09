@@ -478,7 +478,7 @@ suppressWarnings(main())
 
 main <- function(){
   max <- 30
-  text2 <- data.frame(aTestSem())
+  text2 <- data.frame(copy.sem())
   text2 <- text2[2]
   # Read the text file from local machine , choose file interactively
   # text2 <- readLines(file.choose())
@@ -539,7 +539,7 @@ suppressWarnings(main())
 
 main <- function(){
   max <- 30
-  text2 <- data.frame(aTestMois())
+  text2 <- data.frame(copy.mois())
   text2 <- text2[2]
   # Read the text file from local machine , choose file interactively
   # text2 <- readLines(file.choose())
