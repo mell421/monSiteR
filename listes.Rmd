@@ -97,3 +97,71 @@ data <- data.frame(aListes())
 data %>% filter(titre != "")  %>% select(titre,nbDeLignes) 
 data %>% filter(titre_1 != "")  %>% select(titre_1,nbPage) 
 ```
+
+## copy
+```{r copy, echo=FALSE}
+data <- data.frame(aCopyAll())
+        data <- data[2:2]
+        data %>% filter(tout != "")
+    
+```
+
+## conclu
+```{r conclu, echo=FALSE}
+   data <- data.frame(aTestConclu())
+        data <- data[2:4]
+        data %>% filter(conclucompi.... != "")
+    
+```
+
+## conclubis
+```{r conclubis, echo=FALSE}
+data <- data.frame(aTestConcluBis())
+        data <- data[2:4]
+        data %>% filter(conclucompibis.... != "")
+    
+```
+
+## sem
+```{r sem, echo=FALSE}
+data <- data.frame(copy.sem())
+        data <- data[2:5]
+        data %>% filter(resumesem.... != "")
+```
+
+## mois
+```{r mois, echo=FALSE}
+data <- data.frame(copy.mois())
+        data <- data[2:5]
+        data %>% filter(resumemois.... != "")
+    
+```
+
+## max
+```{r max, echo=FALSE}
+data <- data.frame(aTestMax())
+        data <- data[2:4]
+        data %>% filter(max.... != "")
+```
+
+## eff
+```{r eff, echo=FALSE}
+data <- data.frame(aEff())
+        data <- data[2:4]
+        data %>% filter(eff.... != "")
+```
+
+## pageappres
+```{r pageappres, echo=FALSE}
+data <- data.frame(pageappres())
+        data <- data[1:16]
+        data %>% filter(date != "") 
+```
+
+## pageappres suppr
+```{r pageappressup, echo=FALSE}
+data <- data.frame(pageappressup())
+        data <- data[1:16]
+        data %>% filter(date != "") 
+```
+
