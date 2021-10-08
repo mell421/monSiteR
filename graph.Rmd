@@ -18,6 +18,37 @@ library(dplyr)
 ```
 
 
+```{r analyse, eval=FALSE, include=FALSE}
+## analyse de mot
+CopyS <- data.frame(aListes())
+
+main <- function(){
+  max <- 30
+  CopyS <- na.omit(CopyS)
+  
+  ec <- CopyS %>% filter(nbMotEc >= 1)
+  ec2 <- ec %>% arrange(desc(ec$nbMotEc))
+  barplot(ec$nbMotEc, 
+          las = 2, 
+          names.arg = ec$motEc,
+          col =brewer.pal(8, "Dark2"), 
+          main ="Top mot Ec",
+          ylab = "Word frequencies",
+          ylim=c(0,100),
+          xlim=c(0,96)
+          )
+  box()
+  #pie(ec2$nbMotEc,label=paste(ec2$motEc,"",ec2$nbMotEc))
+  
+  
+  
+  
+  
+  
+}
+suppressWarnings(main())
+```
+
 ## en cours
 ```{r ecocc, echo=FALSE}
 CopyS <- data.frame(aECocc())
