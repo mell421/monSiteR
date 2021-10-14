@@ -8,10 +8,8 @@ output:
 ---
 ```{r setup, include = FALSE}
 suppressWarnings(source("./fct/sources.R"))
-suppressWarnings(library(tidyverse))
 # knitr::opts_chunk$set(cache = TRUE)
-library(ggraph)
-library(tidygraph)
+
 ```
 
 ## recent

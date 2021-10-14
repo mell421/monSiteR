@@ -10,11 +10,7 @@ output:
 suppressWarnings(source("./fct/sources.R"))
 # knitr::opts_chunk$set(cache = TRUE)
 
-require(devtools)
-library(knitr)
-library(rmarkdown)
-library(wordcloud2)
-library(dplyr)
+
 ```
 
 
