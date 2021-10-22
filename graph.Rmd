@@ -9,7 +9,7 @@ output:
 ```{r setup, include = FALSE}
 suppressWarnings(source("./fct/sources.R"))
 # knitr::opts_chunk$set(cache = TRUE)
-
+begin_time<-Sys.time()
 
 ```
 
@@ -316,4 +316,11 @@ barplot(table(df$ncb),
         ylim=c(0,max(table(df$ncb))*1.1)
         )
 box()
+```
+
+### timing 
+```{r timing , echo=FALSE}
+end_time<-Sys.time()
+total_time <- end_time - begin_time
+print(total_time)
 ```

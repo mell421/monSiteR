@@ -9,7 +9,27 @@ output:
 ```{r setup, include = FALSE}
 suppressWarnings(source("./fct/sources.R"))
 # knitr::opts_chunk$set(cache = TRUE)
+begin_time<-Sys.time()
+library(vtable)
 ```
+### stats
+```{r stats, echo=FALSE}
+# by(data, data$category, summary)
+# Hmisc::describe(data)
+print("accueil")
+accue <- data.frame(accueil())
+#summary(accue)
+#Hmisc::describe(accue)
+a2 <- (st(accue))
+a2
+print("copy script")
+cs <- data.frame(aCopyScript())
+#summary(cs)
+#Hmisc::describe(cs)
+c2 <- (st(cs))
+c2
+```
+
 
 ## historique
 ```{r hist, echo=FALSE}
@@ -164,3 +184,9 @@ data <- data.frame(pageappressup())
         data %>% filter(date != "") 
 ```
 
+### timing 
+```{r timing , echo=FALSE}
+end_time<-Sys.time()
+total_time <- end_time - begin_time
+print(total_time)
+```
