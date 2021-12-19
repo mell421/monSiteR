@@ -3,9 +3,8 @@
 
 # usethis::use_vignette("base_de_donnees_principale")
 
-mainNb <- function(){
+library("gsheet")
 
-}
 
 aleat <- function(max,nb){
   tirage <- sample(1:max,nb)

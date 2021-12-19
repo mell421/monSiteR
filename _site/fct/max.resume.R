@@ -2,6 +2,7 @@
 # install.packages("gsheet")
 
 # usethis::use_vignette("base_de_donnees_principale")
+library("gsheet")
 
 # fonction qui charge la page maxResume date
 max.resume.date <- function(){

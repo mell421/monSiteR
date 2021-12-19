@@ -52,6 +52,207 @@ main <- function(){
 suppressWarnings(main())
 ```
 
+### nb tisaep duree
+```{r pars, echo = FALSE}
+CopyS <-data.frame(aPARS())
+  
+  plot(CopyS$incJ,main="nb de tisaep",type = "l",col="red",xlab = "date",ylab = "nb",ylim=c(0,30*1.1) )
+  lines(CopyS$incS,type = "l",col="navy blue")
+  lines(CopyS$incM,type = "l",col="purple")
+  lines(CopyS$j,type = "l",col="orange")
+  lines(CopyS$s,type = "l",col="blue")
+  lines(CopyS$m,type = "l",col="violet")
+  box()
+  
+```
+
+### calendar
+```{r cal2, echo=FALSE}
+
+print("cal21")
+
+df <- data.frame(aCal21())
+
+barplot(table(df$sem1),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$sem1))*1.1)
+        )
+box()
+
+barplot(table(df$sem2),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week fin",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$sem2))*1.1)
+        )
+box()
+
+barplot(table(df$sem3),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week debut",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$sem3))*1.1)
+        )
+box()
+
+barplot(table(df$sem4),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week premder",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$sem4))*1.1)
+        )
+box()
+
+print("calEc")
+
+df2 <- data.frame(aCalEc())
+
+barplot(table(df2$sem1),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week (recent)",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df2$sem1))*1.1)
+        )
+box()
+
+barplot(table(df2$sem2),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week (recent) fin",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df2$sem2))*1.1)
+        )
+box()
+
+barplot(table(df2$sem3),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week (recent) debut",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df2$sem3))*1.1)
+        )
+box()
+
+
+# max(table(df$sem1))*1.1
+```
+
+```{r cal, echo=FALSE}
+df <- data.frame(aCal21())
+
+layout(matrix(1:4,2,2))
+
+barplot(table(df$sem1),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$sem1))*1.1)
+        )
+box()
+
+barplot(table(df$sem2),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week fin",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$sem2))*1.1)
+        )
+box()
+
+barplot(table(df$sem3),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week debut",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$sem3))*1.1)
+        )
+box()
+
+barplot(table(df$sem4),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week premder",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$sem4))*1.1)
+        )
+box()
+
+df2 <- data.frame(aCalEc())
+
+barplot(table(df2$sem1),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week (recent)",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df2$sem1))*1.1)
+        )
+box()
+
+barplot(table(df2$sem2),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week (recent) fin",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df2$sem2))*1.1)
+        )
+box()
+
+barplot(table(df2$sem3),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="ep per week (recent) debut",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df2$sem3))*1.1)
+        )
+box()
+
+
+# max(table(df$sem1))*1.1
+```
+
+### reste
+```{r reste, echo=FALSE}
+df <- data.frame(aReste())
+
+barplot(table(df$pays),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="pays",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$pays))*1.1)
+        )
+box()
+
+barplot(table(df$rest),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="rest",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$rest))*1.1)
+        )
+box()
+
+barplot(table(df$titre_6),
+        las = 2,
+        col =brewer.pal(8, "Dark2"), 
+        main ="titre (pour conclu)",
+        ylab = "nb ep",
+        ylim=c(0,max(table(df$titre_6))*1.1)
+        )
+box()
+
+# max(table(df$sem1))*1.1
+```
+
+
 ## regression max
 ```{r regress0, echo = FALSE}
 # install.packages("car")

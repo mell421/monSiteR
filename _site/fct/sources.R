@@ -5,12 +5,13 @@
 # devtools::install("ajoutRep")
 
 loadMesSources <- function(){
-  source("~/GitHub/monSiteR/fct/accueil.R")
-  source("~/GitHub/monSiteR/fct/copy.R")
-  source("~/GitHub/monSiteR/fct/nombre.R")
-  source("~/GitHub/monSiteR/fct/max.resume.R")
-  source("~/GitHub/monSiteR/fct/resume.R")
-  source("~/GitHub/monSiteR/fct/page.R")
+  source("./fct/accueil.R")
+  source("./fct/copy.R")
+  source("./fct/nombre.R")
+  source("./fct/max.resume.R")
+  source("./fct/resume.R")
+  source("./fct/page.R")
+  source("./fct/word.R")
 }
 installMesPackages <- function(){
   install.packages("gsheet")
@@ -22,31 +23,34 @@ installMesPackages <- function(){
   install.packages("ggplot2")
   install.packages(utf8)
   install.packages(dplyr)
+  webshot::install_phantomjs(force = TRUE)
+  install.packages("Hmisc")
+
 }
 
 
 
 loadMesPackages <- function(){
-  library("gsheet")
-  library("tm")
-  library("SnowballC")
-  library("wordcloud")
-  library("RColorBrewer")
-  library("syuzhet")
-  library("ggplot2")
-  library(utf8)
-  suppressWarnings(library(tidyverse))
-  library(webshot)
-  library("htmlwidgets")
-  require(devtools)
-  library(wordcloud2)
-  library(Hmisc)
-  library(knitr)
-  library(rmarkdown)
   library(car)
   library(dplyr)
+  library(DT)
+  require("gsheet")
+  library("ggplot2")
   library(ggraph)
+  library("htmlwidgets")
+  library(Hmisc)
+  library("tm")
   library(tidygraph)
+  library("RColorBrewer")
+  library("SnowballC")
+  library("syuzhet")
+  suppressWarnings(require(tidyverse))
+  require("utf8")
+  require("wordcloud")
+  require(wordcloud2)
+  require("webshot")
+  require(vtable)
+  require(devtools)
 }
 
 loadMesPackages()
